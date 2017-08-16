@@ -3,9 +3,14 @@ module.exports = function(grunt) {
   // Project configuration.
 grunt.initConfig({
   uglify: {
+    options: {
+      mangle: false,
+      compress: false,
+      beautify: true
+    },
     my_target: {
       files: {
-        'devParser.js': ['src/input1.js', 'src/input2.js']
+        'src/astCreation/finalAstGenerator.js': ['src/astCreation/initValues.js', 'src/astCreation/objectFunctions.js', 'src/astCreation/requestFile.js', 'src/astCreation/getExpressions.js', 'src/astCreation/evaluateType.js', 'src/astCreation/finalAstGenerator.js']
       }
     }
   }
