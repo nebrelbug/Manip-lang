@@ -1,0 +1,28 @@
+{
+  "name": "manip-lang",
+  "version": "1.0.0",
+  "description": "A hobby programming language",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nebrelbug/manip-lang.git"
+  },
+  "keywords": [
+    "language",
+    "manip",
+    "manip-lang"
+  ],
+  "author": "Ben Gubler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nebrelbug/manip-lang/issues"
+  },
+  "homepage": "https://github.com/nebrelbug/manip-lang#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^3.0.1"
+  }
+}

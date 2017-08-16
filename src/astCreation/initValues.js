@@ -1,0 +1,2 @@
+var ast;
+var globalAst;
