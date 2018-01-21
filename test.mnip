@@ -19,13 +19,13 @@ Log[str[Backwards]]; //This is a predefined function that logs to the console. I
 
 //Below is a function. Pretty sweet, eh? Notice how (similarly to above) the parameters are in square brackets. That pattern continues.//;
 Func(myFunction) = |[param, param]|
-log[param+param], //Sub-expressions are separated by commas//;
-testString = "goodbye" //Comments can be put anywhere, even in the middle of an expression.//;
+Log[param+param], //Sub-expressions are separated by commas//,
+Var(testString) = "goodbye", //Comments can be put anywhere even in the middle of an expression but they have to have commas at the end and they can't have commas in the middle.//,
 |;
 
 Do[myFunction[1,1]];//Use the 'Do' operator to call functions//;
 
-Do[50]|//Or to act as a repeat operator//;
-Var(testString) = Var(testString) + "Hi", //Notice the comma at the end: inside functions, use commas instead of semicolons//;
+For[50, i]|//Or to act as a repeat operator//,
+Var(testString) = Var(testString) + "Hi", //Notice the comma at the end: inside functions use commas instead of semicolons//,
 //Modify variables kind of like in JavaScript.//
 |;

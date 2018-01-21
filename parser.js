@@ -34,10 +34,10 @@ requestFile('test.mnip');
 
 function parseFile(file) {
   //console.log("file: " + file);
-  //console.log("With no spaces: " + file.replace(/\s/g,''));
+  console.log("With no spaces: " + file.replace(/\s/g,''));
   var noWhiteSpaceFile = file.replace(/\s/g,'');
   var expressions = noWhiteSpaceFile.split(";");
-  //console.log("expressions: " + expressions);
+  console.log("expressions: " + expressions);
   
   function nameFunc(miniAst) {
     this.miniAst = miniAst;
@@ -123,7 +123,7 @@ value = afterEqualsRegExp.exec(expressionEval);
         value: value[1]
       }                                    
     }
-    ast[i] = new astExpression(type, action, rest, value);
+    //ast[i] = new astExpression(type, action, rest, value);
   }
   console.log(ast);
   
