@@ -10,7 +10,7 @@ grunt.initConfig({
     },
     my_target: {
       files: {
-        'src/astCreation/finalAstGenerator.js': ['src/astCreation/initValues.js', 'src/astCreation/objectFunctions.js', 'src/astCreation/requestFile.js', 'src/astCreation/getExpressions.js', 'src/astCreation/evaluateType.js', 'src/astCreation/finalAstGenerator.js']
+        'src/astCreation/finalAstGenerator.js': ['src/astCreation/initValues.js', 'src/astCreation/objectFunctions.js', 'src/astCreation/requestFile.js', 'src/astCreation/getExpressions.js', 'src/astCreation/evaluateType.js']
       }
     }
   }

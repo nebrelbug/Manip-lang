@@ -1,8 +1,23 @@
 function generateAst(expressions) {
-  ast = new astObject (0, 0);
-  for (var i=0; i<expressions.length; i++) {
-    var expression = expressions[i];
-    ast.evaluateType(expression);
-}
-
-//generateAstFromExpressions(getExpressions(file));
+  this = {}
+  for (var i = 0; i < expressions.length; i++) {
+      var expression = expressions[i];
+      var etype = evaluateType(expression);
+      if (etype === "comment") {
+          this[i] = new astObject.Comment
+      } else if (etype === "string") {
+          this[i] = parseExpression(expression, etype)
+      } else if (etype === "number") {
+        this[i] = parseExpression(expression, etype)
+      } else if (etype === "variable") {
+        this[i] = parseExpression(expression, etype)  
+      } else if (etype === "log") {
+          
+      } else if (etype === "conditional") {
+          
+      } else if (etype === "do") {
+          
+      } else if (etype === "function") {
+          
+      }
+  }

@@ -1,2 +1,1 @@
-var ast;
-var globalAst;
+var ast = {};
