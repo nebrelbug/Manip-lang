@@ -1,26 +1,51 @@
-function generateAst(expressions) {
-  this = {}
+function generateAstFromExps(expressions) {
+  var ast = {}
   for (var i = 0; i < expressions.length; i++) {
-    var expression = expressions[i];
-    var etype = evaluateType(expression);
-    if (etype === "comment") {
-      this[i] = parseComment()
-    } else if (etype === "string") {
-      this[i] = parseDeclaration(expression, etype)
-    } else if (etype === "number") {
-      this[i] = parseDeclaration(expression, etype)
-    } else if (etype === "variable") {
-      this[i] = parseDeclaration(expression, etype)
-    } else if (etype === "log") {
-      this[i] = parseLog(expression)
-    } else if (etype === "conditional") {
-      this[i] = parseConditional(expression)
-    } else if (etype === "do") {
-      this[i] = parseDo(expression)
-    } else if (etype === "function") {
-      this[i] = parseFunction(expression)
-    } else if (etype === "loop") {
-      this[i] = parseLoop(expression)
-    }
+      var expression = expressions[i];
+      console.log("expression: " + expression)
+      var etype = evaluateType(expression);
+      if (etype === "comment") {
+          ast[i] = parseComment()
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "string") {
+          ast[i] = parseDeclaration(expression, etype)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "number") {
+          ast[i] = parseDeclaration(expression, etype)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "variable") {
+          ast[i] = parseDeclaration(expression, etype)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "log") {
+          ast[i] = parseLog(expression)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "conditional") {
+          ast[i] = parseConditional(expression)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "do") {
+          ast[i] = parseDo(expression)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "function") {
+          ast[i] = parseFunction(expression)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      } else if (etype === "loop") {
+          ast[i] = parseLoop(expression)
+          console.log("ast[" + i + "]: " + JSON.stringify(ast[i]))
+      }
   }
+  console.log("our ast: " + JSON.stringify(ast))
+  return ast
 }
+
+function generateAstFromFile(path) {
+  requestFile(path, function doTheStuff(error, content) {
+      if (error) throw error
+      var expressions = getExpressions(content, false)
+      console.log("expressions at 228: " + expressions)
+      console.log("final ast: " + JSON.stringify(generateAstFromExps(expressions)))
+      return generateAstFromExps(expressions)
+
+  })
+}
+
+

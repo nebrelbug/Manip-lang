@@ -1,13 +1,12 @@
-function getExpressions(file, miniAst) {
-    //var noWhiteSpaceFile = file.replace(/\s/g, '');
+function getExpressions(file, miniAst) {//miniAst is boolean, true if it's a miniAst
     var expressions;
     if (miniAst) {
-        var expressions = file.split(",");
+        var expressions = file.toString().split(",");
     } else {
-        var expressions = file.split(";");
+        var expressions = file.toString().split(";");
     }
     for (var i = 0; i < expressions.length; i++) {
-        expressions[i] = expressions[i].trim().replace(/[^\S ]+/g, '')
+        expressions[i] = expressions[i].trim().toString().replace(/[^\S ]+/g, '')
     }
     return expressions;
 }
